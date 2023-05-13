@@ -79,6 +79,7 @@ void UpdatePlayer(Player *player, Platform *plats, Hazard  *hazs, Object  *obs, 
     //bool onground = false;
 
     bool collision = false;
+    bool collision_2 = false;
 
     for (int i = 0; i < mapi->numHazards; i++)
     {
@@ -132,6 +133,20 @@ void UpdatePlayer(Player *player, Platform *plats, Hazard  *hazs, Object  *obs, 
             float plat_left = ei->rect.x;
             float plat_right = plat_left + ei->rect.width;
             float plat_bottom = plat_top + ei->rect.height;
+
+            if ( player->collide.y > ei->rect.y && player->collide.y + player->collide.height < ei->rect.y + ei->rect.height &&
+                 player->collide.x > ei->rect.x && player->collide.x + player->collide.width < ei->rect.x + ei->rect.width)
+            {
+                collision_2 = true;
+            }
+
+            if ( collision_2 )
+            {
+                Vector2 targetPosition = { 200, 150 };
+                float speed = 2.0f; // Adjust this value to control the speed of the movement
+                player->position.x = 150;
+                player->position.y = 130;
+            }
 
             if (//ei->rect.x <= p->x &&
                 //ei->rect.x + ei->rect.width > p->x &&
