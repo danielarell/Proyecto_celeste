@@ -41,6 +41,7 @@ int main()
 
     Texture2D Logo = LoadTexture("../Assets/LOGO.png");
     Texture2D Title = LoadTexture("../Assets/TITLE.png");
+    Texture2D End = LoadTexture("../Assets/ENDING.png");
     Texture2D star_2 = LoadTexture("../Assets/Star.png");
     Texture2D berry = LoadTexture("../Assets/berry.png");
     Texture2D livel1 = LoadTexture("../Assets/map_text.png");
@@ -181,6 +182,12 @@ int main()
                     }
 
                     jugabilidad(&player, isPaused, &TOTAL_DEATHS, &camera);
+
+                    if (level2.count_n_obj == level2.global_objects)
+                    {
+                        screen = 0;
+                        gameScreen = ENDING;
+                    }
                 }
             }break;
 
@@ -283,14 +290,11 @@ int main()
 
             case ENDING:
             {
-
+                DrawTexture(End, 0, 0, WHITE);
             }break;
         }
-
         DrawFPS(5,5);
-
         EndDrawing();
-
     }
     CloseWindow();
     return 0;
