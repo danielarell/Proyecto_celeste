@@ -148,11 +148,7 @@ void UpdatePlayer(Player *player, Platform *plats, Hazard  *hazs, Object  *obs, 
                 player->position.y = 130;
             }
 
-            if (//ei->rect.x <= p->x &&
-                //ei->rect.x + ei->rect.width > p->x &&
-                //ei->rect.y - player->text.height >= p->y &&
-                //ei->rect.y - player->text.height <= p->y + player->speed*(*delta)
-                plat_left <= player_left && plat_right > player_left && plat_top - player->text.height >= player_top && plat_top - player->text.height <= player_top + player->speed*(*delta) && player_bottom <= plat_top
+            if (plat_left <= player_left && plat_right > player_left && plat_top - player->text.height >= player_top && plat_top - player->text.height <= player_top + player->speed*(*delta) && player_bottom <= plat_top
                 )
             {
                 hitObstacle = 1;
