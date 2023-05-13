@@ -151,6 +151,7 @@ void UpdatePlayer(Player *player, Platform *plats, Hazard  *hazs, Object  *obs, 
             if (plat_left <= player_left && plat_right > player_left && plat_top - player->text.height >= player_top && plat_top - player->text.height <= player_top + player->speed*(*delta) && player_bottom <= plat_top
                 )
             {
+                //Pisa plataforma
                 hitObstacle = 1;
                 player->speed = 0.0f;
                 p->y = ei->rect.y - player->text.height;
