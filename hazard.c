@@ -10,7 +10,7 @@ void inithazards(Image img, int *numhazard, Hazard *hazs)
     int imgWidth = img.width;
     int imgHeight = img.height;
 
-    int height = 0;
+    int height;
 
     for (int row = 0; row < imgHeight; row++)
     {
@@ -48,7 +48,6 @@ void inithazards(Image img, int *numhazard, Hazard *hazs)
                 {
                     hazs[*numhazard].coll = rect;
                     hazs[*numhazard].position = (Vector2){col + width / 2.0f, row + height / 2.0f};
-                    hazs[*numhazard].isActive =  true;
                     (*numhazard)++;
                 }
 

@@ -20,10 +20,6 @@ typedef struct Player
     Vector2 position;
     float speed;
     bool canJump;
-    bool onTop;
-    bool isFalling;
-    bool IsAlive;
-    Vector2 velocity;
 }Player;
 
 void UpdatePlayer(Player *player, Platform *plats, Hazard  *hazs, Object *obs,float *delta, int *framew, int *deaths, Map *mapi, Rectangle camera, Level *lev);

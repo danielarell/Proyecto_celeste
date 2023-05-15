@@ -62,7 +62,6 @@ void InitObjects(Image img, int *numobjects, Object *objects)
                     if (color_equal(color_act, RED))
                     {
                         objects[*numobjects].type = berry;
-                        //objects[numobjects].imagen = LoadTexture("coin.png");
                     }
                     if (color_equal(color_act, YELLOW))
                     {

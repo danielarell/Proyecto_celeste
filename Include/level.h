@@ -18,7 +18,7 @@ typedef struct level
     int count_sp_obj, count_n_obj;
 }Level;
 
-void RenderLevel(int level, Level *nivel, Map *mapi, Platform *plats, Hazard *hazs, Object *objects, int *numplats, int *numhazard, int *numobjects);
+void RenderLevel(Level *nivel, Map *mapi, Platform *plats, Hazard *hazs, Object *objects, int *numplats, int *numhazard, int *numobjects);
 
 Level createlevel(char *background_path, char *platform_img_path, char *hazard_img_path, char *objects_img_path, Map mapi, int global_objects, int special_objects);
 

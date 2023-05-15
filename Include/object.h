@@ -10,20 +10,17 @@
 typedef enum object_type
 {
     berry,
-    dash,
     star
 
 }OBJ_TYPE;
 
 typedef struct object
 {
-    Texture2D imagen;
     Rectangle recta;
     Rectangle colli;
     Vector2 position;
     bool isActive;
     OBJ_TYPE type;
-
 }Object;
 
 bool color_equal(Color a, Color b);

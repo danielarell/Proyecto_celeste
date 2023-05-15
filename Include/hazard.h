@@ -11,8 +11,6 @@ typedef struct hazard
 {
     Rectangle coll;
     Vector2 position;
-    bool isActive;
-
 }Hazard;
 
 void inithazards(Image img, int *numhazard, Hazard *hazs);

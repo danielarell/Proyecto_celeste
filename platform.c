@@ -49,8 +49,6 @@ void initlevel(Image img, int *numplats, Platform *plats)
                 {
                     plats[*numplats].rect = rect;
                     plats[*numplats].position = (Vector2){col + width / 2.0f, row + height / 2.0f};
-                    plats[*numplats].widths = width;
-                    plats[*numplats].heights = height;
                     (*numplats)++;
                 }
 
@@ -58,6 +56,5 @@ void initlevel(Image img, int *numplats, Platform *plats)
             }
         }
     }
-
 }
 

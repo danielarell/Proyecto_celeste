@@ -4,7 +4,7 @@
 
 #include "Include/level.h"
 
-void RenderLevel(int level, Level *nivel, Map *mapi, Platform *plats, Hazard *hazs, Object *objects, int *numplats, int *numhazard, int *numobjects)
+void RenderLevel(Level *nivel, Map *mapi, Platform *plats, Hazard *hazs, Object *objects, int *numplats, int *numhazard, int *numobjects)
 {
     initlevel(nivel->plat_img, numplats, plats);
     inithazards(nivel->haz_img, numhazard, hazs);

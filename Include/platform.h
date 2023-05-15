@@ -11,9 +11,6 @@ typedef struct platform
 {
     Rectangle rect;
     Vector2 position;
-    int widths;
-    int heights;
-
 } Platform;
 
 void initlevel(Image img, int *numplats, Platform *plats);

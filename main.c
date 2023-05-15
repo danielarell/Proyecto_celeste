@@ -32,7 +32,6 @@ int main()
     int TOTAL_DEATHS = 0;
     bool isPaused = false;
 
-    // Initialization
     typedef enum {LOGO, TITLE, GAME, ENDING} Gamescreen;
     Gamescreen gameScreen = LOGO;
     int screen = 0;
@@ -56,13 +55,9 @@ int main()
     player.collide = (Rectangle){player.position.x, player.position.y, (float)framewidth, (float)player.text.height};
     player.speed = 0;
     player.canJump = false;
-    player.IsAlive = true;
-    player.isFalling = true;
-    player.velocity = (Vector2) {0,0};
 
     Level level1 = createlevel("../Assets/Lvl1_BCK.png", "../Assets/map_lvl1.png", "../Assets/Map_lvl_h.png", "../Assets/nivel1objetos.png", mapi_1, 9, 4);
     Level level2 = createlevel("../Assets/Lvl2_BCK.png", "../Assets/lvl2plat.png", "../Assets/lvl2hazards.png", "../Assets/nivel2objetos.png", mapi_2, 10, 4);
-
 
     Camera2D camera = { 0 };
     camera.target = (Vector2){ player.position.x + 20.0f, player.position.y + 20.0f};
@@ -74,7 +69,6 @@ int main()
 
     while (!WindowShouldClose())
     {
-        // Update Screen
         float deltaTime = GetFrameTime();
 
         counterf++;
@@ -148,7 +142,7 @@ int main()
                 else if (screen == 1)
                 {
 
-                    RenderLevel(screen, &level1, &mapi_1, plats, hazs, objects, &numplats, &numhazard, &numobjects);
+                    RenderLevel(&level1, &mapi_1, plats, hazs, objects, &numplats, &numhazard, &numobjects);
 
                     if (IsKeyPressed(KEY_P)) {
                         isPaused = !isPaused;
@@ -175,7 +169,7 @@ int main()
                 }
                 else if (screen == 3)
                 {
-                    RenderLevel(screen, &level2, &mapi_2, plats, hazs, objects, &numplats, &numhazard, &numobjects);
+                    RenderLevel(&level2, &mapi_2, plats, hazs, objects, &numplats, &numhazard, &numobjects);
 
                     if (IsKeyPressed(KEY_P)) {
                         isPaused = !isPaused;
@@ -281,7 +275,6 @@ int main()
                         {
                             pause(level2, TOTAL_DEATHS);
                         }
-                        //DrawText("Nivel 2", cameraRec.x + 20, cameraRec.y + 10, 40, BLACK);
                     }break;
                 }
                 EndMode2D();
